@@ -1,0 +1,3 @@
+content	directoryindexfinder	chrome/content/
+overlay	chrome://browser/content/browser.xul	chrome://directoryindexfinder/content/overlay.xul
+skin	directoryindexfinder	classic/1.0	chrome/skin/
