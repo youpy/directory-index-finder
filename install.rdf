@@ -4,7 +4,7 @@
     <Description about="urn:mozilla:install-manifest">
         <em:id>{d14edeb9-0431-45c4-ba05-a87213e48120}</em:id>
         <em:name>Directory Index Finder</em:name>
-        <em:version>0.1.1</em:version>
+        <em:version>0.1.2</em:version>
         <em:type>2</em:type>
         <em:description>Find naked directory index and open in new tab</em:description>
         <em:creator>youpy</em:creator>

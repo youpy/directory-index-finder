@@ -1,4 +1,4 @@
-var foundDirs = {};
+var checkedDirs = {};
 
 var DirectoryIndexFinder = {
   observe: function(aSubject, aTopic, aData) {
@@ -14,14 +14,14 @@ var DirectoryIndexFinder = {
 	if(guessUrl == httpChannel.originalURI.resolve(''))
 	  return;
 
-	if(!foundDirs[guessUrl]) {
+	if(!checkedDirs[guessUrl]) {
+	  checkedDirs[guessUrl] = true;
+
 	  var req = new XMLHttpRequest();
 	  req.open("GET", guessUrl, true);
 	  req.onload = function(e) {
 	    if(req.responseText.match(/<title>Index of/i)) {
-	      if(!foundDirs[guessUrl])
-		openAndReuseOneTabPerURL(guessUrl);
-	      foundDirs[guessUrl] = true;
+	      openAndReuseOneTabPerURL(guessUrl);
 	    }
 	  };
 
