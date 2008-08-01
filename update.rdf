@@ -2,21 +2,21 @@
 <RDF:RDF xmlns:em="http://www.mozilla.org/2004/em-rdf#"
          xmlns:NC="http://home.netscape.com/NC-rdf#"
          xmlns:RDF="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-  <RDF:Description RDF:about="rdf:#$OMQtH3"
-                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
-                   em:minVersion="2.0"
-                   em:maxVersion="3.*"
-                   em:updateHash="sha1:33e57712170c95dedfd86a2c36b3aeb49fa5e55b"
-                   em:updateLink="http://github.com/youpy/directory-index-finder/tree/master/DirectoryIndexFinder-0.1.2-fx.xpi?raw=true" />
   <RDF:Description RDF:about="rdf:#$LMQtH3"
                    em:version="0.1">
     <em:targetApplication RDF:resource="rdf:#$OMQtH3"/>
   </RDF:Description>
-  <RDF:Description RDF:about="urn:mozilla:extension:{ee2c111f-42a1-416f-b3ff-1e086ee5221f}"
-                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBACt+0tu2y0w0jKOFf8nUkr6D3I8nlFoZr1L/qRDWEe8MSmKJCJiUMzXcKwTTtd/bg1F8tkEiEulCOcwsw6sVxc2J0QuKlqWMMsrXu+wdK0OEIdL7CK+g7qeitxCuVixT7D6GJ+95qtioMgqp89uRSPn8VutlITAMQ+PQtkrOKJ3x">
-    <em:updates RDF:resource="rdf:#$KMQtH3"/>
-  </RDF:Description>
   <RDF:Seq RDF:about="rdf:#$KMQtH3">
     <RDF:li RDF:resource="rdf:#$LMQtH3"/>
   </RDF:Seq>
+  <RDF:Description RDF:about="urn:mozilla:extension:{ee2c111f-42a1-416f-b3ff-1e086ee5221f}"
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAAB+XTtkqnEg2NO91SsXepnSPR4nZidNxVfPJ4khO6I+XHJN2O5ojk8nbTtvz9CnQIDIZX5TmAUIiEZN6bDAnhk5vI6sL6v8JX/cZg6hWDMu57TsV32yBOqy98dVEhy73PkTr/UflxPFE4+SirVW+j0mB0P8KRgsNiFlt/ZqL2+H">
+    <em:updates RDF:resource="rdf:#$KMQtH3"/>
+  </RDF:Description>
+  <RDF:Description RDF:about="rdf:#$OMQtH3"
+                   em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
+                   em:minVersion="2.0"
+                   em:maxVersion="3.*"
+                   em:updateHash="sha1:eca8d7c5482272dfb374d01f9c1c3323602fbdcb"
+                   em:updateLink="http://github.com/youpy/directory-index-finder/tree/master/DirectoryIndexFinder-0.1.2-fx.xpi?raw=true" />
 </RDF:RDF>
