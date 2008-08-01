@@ -9,7 +9,7 @@
   <RDF:Seq RDF:about="rdf:#$KMQtH3">
     <RDF:li RDF:resource="rdf:#$LMQtH3"/>
   </RDF:Seq>
-  <RDF:Description RDF:about="urn:mozilla:extension:{ee2c111f-42a1-416f-b3ff-1e086ee5221f}"
+  <RDF:Description RDF:about="urn:mozilla:extension:{d14edeb9-0431-45c4-ba05-a87213e48120}"
                    em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBAAB+XTtkqnEg2NO91SsXepnSPR4nZidNxVfPJ4khO6I+XHJN2O5ojk8nbTtvz9CnQIDIZX5TmAUIiEZN6bDAnhk5vI6sL6v8JX/cZg6hWDMu57TsV32yBOqy98dVEhy73PkTr/UflxPFE4+SirVW+j0mB0P8KRgsNiFlt/ZqL2+H">
     <em:updates RDF:resource="rdf:#$KMQtH3"/>
   </RDF:Description>
