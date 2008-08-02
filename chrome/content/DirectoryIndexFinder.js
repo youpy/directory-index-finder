@@ -1,32 +1,45 @@
+
+var Ci = Components.interfaces;
+var Cc = Components.classes;
+
+var wm = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
+var alertsService = Cc["@mozilla.org/alerts-service;1"].getService(Ci.nsIAlertsService);
+var observerService = Cc['@mozilla.org/observer-service;1'].getService(Ci.nsIObserverService);
+
 var checkedDirs = {};
+var foundDirs = {};
 
 var DirectoryIndexFinder = {
   observe: function(aSubject, aTopic, aData) {
     if (aTopic == 'http-on-examine-response') {
-      var httpChannel = aSubject.QueryInterface(Components.interfaces.nsIHttpChannel);
+      var httpChannel = aSubject.QueryInterface(Ci.nsIHttpChannel);
       var mimeType = httpChannel.getResponseHeader('Content-Type').split(';')[0];
       var contentLength = httpChannel.getResponseHeader('Content-Length');
 
       if (mimeType.match(/^(image|audio)/) && contentLength > 1024 * 2) {
-	var guessUrl = httpChannel.originalURI.resolve('.');
-	
-	// prevent loop
-	if(guessUrl == httpChannel.originalURI.resolve(''))
-	  return;
+				var guessUrl = httpChannel.originalURI.resolve('.');
+				
+       	// prevent loop
+				if(guessUrl == httpChannel.originalURI.resolve(''))
+					return;
 
-	if(!checkedDirs[guessUrl]) {
-	  checkedDirs[guessUrl] = true;
+				if(!checkedDirs[guessUrl]) {
+					checkedDirs[guessUrl] = true;
 
-	  var req = new XMLHttpRequest();
-	  req.open("GET", guessUrl, true);
-	  req.onload = function(e) {
-	    if(req.responseText.match(/<title>Index of/i)) {
-	      openAndReuseOneTabPerURL(guessUrl);
-	    }
-	  };
+					var req = new XMLHttpRequest();
+					req.open("GET", guessUrl, true);
+					req.onload = function(e) {
+						if(req.responseText.match(/<title>Index of/i)) {
+							if(!foundDirs[guessUrl]) {
+								foundDirs[guessUrl] = true;
+								alertsService.showAlertNotification(null, 'Found directory index', guessUrl, false, guessUrl)
+								openAndReuseOneTabPerURL(guessUrl);
+							}
+						}
+					};
 
-	  req.send(null);
-	}
+					req.send(null);
+				}
       }
     }
   },
@@ -40,14 +53,10 @@ window.addEventListener('load', function() {
 }, false);
 
 function addToListener(obj) {
-  var observerService = Components.classes['@mozilla.org/observer-service;1']
-    .getService(Components.interfaces.nsIObserverService);
   observerService.addObserver(obj, 'http-on-examine-response', false);
 }
 
 function openAndReuseOneTabPerURL(url) {
-  var wm = Components.classes["@mozilla.org/appshell/window-mediator;1"]
-                     .getService(Components.interfaces.nsIWindowMediator);
   var browserEnumerator = wm.getEnumerator("navigator:browser");
 
   var found = false;
@@ -58,7 +67,7 @@ function openAndReuseOneTabPerURL(url) {
     for(var index=0; index<numTabs; index++) {
       var currentBrowser = browserInstance.getBrowserAtIndex(index);
       if (url == currentBrowser.currentURI.spec) {
-	// do nothing
+       	// do nothing
         break;
       }
     }

@@ -7,7 +7,7 @@
     <em:targetApplication RDF:resource="rdf:#$OMQtH3"/>
   </RDF:Description>
   <RDF:Description RDF:about="urn:mozilla:extension:{d14edeb9-0431-45c4-ba05-a87213e48120}"
-                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBALAPrkMyHhDr8PsuALsu2Lg+aMAOKhiZKAMUedTlzS7gnNlUqQqbs+eagn/SwG6gsKmcAlsVKR+S9cG2gB+MNGl3ZLLmaOIp1t6L8yWJV6giBUHGt1cRR29GUFAA79u6ccVdawIaDwxJtFeBLpmCCe5m5YG0DESUGOzrbPZOkp84">
+                   em:signature="MIGTMA0GCSqGSIb3DQEBDQUAA4GBACWWEQs1jsd6bsjHPyBOVnpYEifQDjbRl6FMJvHrdYtJSFDlHW+pHjaQFV2x9lXQOHCIZSgOlzBpbSRTPTjg0QJ3b2L/Q532j906FtrWIe68bmOC9nayX30jrl1y+n6RAq7j36hOu55b//pEtWCbTALZafurhy1I6IxVYKPhs9su">
     <em:updates RDF:resource="rdf:#$KMQtH3"/>
   </RDF:Description>
   <RDF:Seq RDF:about="rdf:#$KMQtH3">
@@ -17,6 +17,6 @@
                    em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    em:minVersion="2.0"
                    em:maxVersion="3.*"
-                   em:updateHash="sha1:eca8d7c5482272dfb374d01f9c1c3323602fbdcb"
+                   em:updateHash="sha1:4ca0dbd086530d3a71b47ccb0099e8aa253bced7"
                    em:updateLink="http://github.com/youpy/directory-index-finder/tree/master/DirectoryIndexFinder-0.1.2-fx.xpi?raw=true" />
 </RDF:RDF>
