@@ -1,4 +1,3 @@
-
 var Ci = Components.interfaces;
 var Cc = Components.classes;
 
@@ -17,29 +16,29 @@ var DirectoryIndexFinder = {
       var contentLength = httpChannel.getResponseHeader('Content-Length');
 
       if (mimeType.match(/^(image|audio)/) && contentLength > 1024 * 2) {
-				var guessUrl = httpChannel.originalURI.resolve('.');
-				
-       	// prevent loop
-				if(guessUrl == httpChannel.originalURI.resolve(''))
-					return;
+        var guessUrl = httpChannel.originalURI.resolve('.');
 
-				if(!checkedDirs[guessUrl]) {
-					checkedDirs[guessUrl] = true;
+        // prevent loop
+        if(guessUrl == httpChannel.originalURI.resolve(''))
+          return;
 
-					var req = new XMLHttpRequest();
-					req.open("GET", guessUrl, true);
-					req.onload = function(e) {
-						if(req.responseText.match(/<title>Index of/i)) {
-							if(!foundDirs[guessUrl]) {
-								foundDirs[guessUrl] = true;
-								alertsService.showAlertNotification(null, 'Found directory index', guessUrl, false, guessUrl)
-								openAndReuseOneTabPerURL(guessUrl);
-							}
-						}
-					};
+        if(!checkedDirs[guessUrl]) {
+          checkedDirs[guessUrl] = true;
 
-					req.send(null);
-				}
+          var req = new XMLHttpRequest();
+          req.open("GET", guessUrl, true);
+          req.onload = function(e) {
+            if(req.responseText.match(/<title>Index of/i)) {
+              if(!foundDirs[guessUrl]) {
+                foundDirs[guessUrl] = true;
+                alertsService.showAlertNotification(null, 'Found directory index', guessUrl, false, guessUrl)
+                openAndReuseOneTabPerURL(guessUrl);
+              }
+            }
+          };
+
+          req.send(null);
+        }
       }
     }
   },
@@ -67,7 +66,7 @@ function openAndReuseOneTabPerURL(url) {
     for(var index=0; index<numTabs; index++) {
       var currentBrowser = browserInstance.getBrowserAtIndex(index);
       if (url == currentBrowser.currentURI.spec) {
-       	// do nothing
+        // do nothing
         break;
       }
     }
