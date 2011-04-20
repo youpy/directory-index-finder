@@ -1,0 +1,7 @@
+= DirectoryIndexFinder
+
+Firefox extention to find naked directory index
+
+== Installation
+
+ rake create_extension_xpi
