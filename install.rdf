@@ -5,11 +5,11 @@
   <RDF:Description RDF:about="rdf:#$HuvgP1"
                    em:id="{ec8030f7-c20a-464f-9b0e-13a3a9e97384}"
                    em:minVersion="1.5"
-                   em:maxVersion="3.*" />
+                   em:maxVersion="4.0.*" />
   <RDF:Description RDF:about="urn:mozilla:install-manifest"
                    em:id="{d14edeb9-0431-45c4-ba05-a87213e48120}"
                    em:name="Directory Index Finder"
-                   em:version="0.1.2"
+                   em:version="0.1.3"
                    em:type="2"
                    em:description="Find naked directory index and open in new tab"
                    em:creator="youpy"
